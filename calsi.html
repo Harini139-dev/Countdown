@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"href="style.css"
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    
+    <input type="text" id="display" readonly style="width: 245px; height:30px; font-size: 26px;" />
+    <div>
+        <button id="btn" onclick="add('1')">7</button>
+        <button id="btn" onclick="add('2')">8</button>
+        <button id="btn" onclick="add('3')">9</button>
+        <button id="btn" onclick="add('/')">/</button><br>
+        <button id="btn" onclick="add('4')">4</button>
+        <button id="btn" onclick="add('5')">5</button>
+        <button id="btn" onclick="add('6')">6</button>
+        <button id="btn" onclick="add('*')">*</button><br>
+        <button id="btn" onclick="add('7')">1</button>
+        <button id="btn" onclick="add('8')">2</button>
+        <button id="btn" onclick="add('9')">3</button>
+        <button id="btn" onclick="add('-')">-</button><br>
+        <button id="btn" onclick="add('0')">0</button>
+        <button id="btn" onclick="add('.')">.</button>
+        <button id="btn" onclick="calculateResult()">=</button>
+        <button id="btn" onclick="add('+')">+</button><br>
+        <button id="btn" onclick="clearDisplay()">clear</button>
+    </div>
+    <script>
+        let display = document.getElementById('display');
+
+        function add(value) {
+            display.value += value;
+        }
+
+        function calculateResult() {
+            try {
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = 'Error';
+            }
+        }
+
+        function clearDisplay() {
+            display.value = '';
+
+            }
+        </script>
+</body>
+</html>
